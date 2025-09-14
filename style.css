@@ -1,0 +1,151 @@
+/* --------- Base --------- */
+:root{
+  --bg:#ffffff;
+  --ink:#0a0a0a;
+  --muted:#666;
+  --line:#eaeaea;
+  --soft:#f6f6f6;
+  --accent:#111;          /* subtle dark accent */
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter, Manrope, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* --------- Nav --------- */
+.nav{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px clamp(16px, 3vw, 40px);
+  backdrop-filter:saturate(180%) blur(10px);
+  background: color-mix(in oklab, white 76%, transparent);
+  border-bottom:1px solid var(--line);
+}
+.wordmark{font-weight:800; letter-spacing:.28em; text-decoration:none; color:var(--ink)}
+.nav nav{display:flex; gap:22px; align-items:center}
+.nav a{color:var(--ink); text-decoration:none; font-weight:600}
+.nav .pill{
+  padding:.5rem .9rem; border:1px solid var(--line); border-radius:999px;
+  transition:background .2s ease, transform .12s ease;
+}
+.nav .pill:hover{background:var(--soft); transform:translateY(-1px)}
+
+/* --------- Hero --------- */
+.hero{position:relative; min-height:80vh; display:grid; place-items:center; overflow:hidden}
+.hero-inner{
+  width:min(1100px, 92vw);
+  padding: clamp(24px, 6vw, 64px) 0;
+}
+.hero h1{
+  font-size: clamp(44px, 8vw, 108px);
+  line-height: .95;
+  letter-spacing:-.02em;
+  font-weight:800;
+}
+.hero h1 span{color:#8a8a8a; font-weight:300}
+.hero .sub{max-width:640px; margin-top:14px; color:var(--muted)}
+.cta-row{display:flex; gap:12px; margin-top:24px; flex-wrap:wrap}
+
+.hero-media{
+  position:absolute; inset:auto 0 0 0; height:60vh; pointer-events:none;
+  display:grid; place-items:center; opacity:.9;
+}
+.hero-media img{
+  width:110%; max-width:none; transform:translateY(0); transition:transform .2s;
+  object-fit:cover; object-position:center;
+  mask-image: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2), transparent 70%);
+}
+
+/* --------- Buttons --------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.9rem 1.2rem; border-radius:999px; font-weight:700; letter-spacing:.01em;
+  text-decoration:none; border:1px solid var(--line); color:var(--ink);
+  background:#fff; transition:transform .12s ease, box-shadow .12s ease, background .15s ease;
+}
+.btn.primary{background:#0a0a0a; color:#fff; border-color:#0a0a0a}
+.btn.ghost{background:#fff}
+.btn:hover{transform:translateY(-1px); box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.link-arrow{font-weight:700; text-decoration:none; color:var(--ink); position:relative}
+.link-arrow::after{content:"→"; margin-left:.4rem; transition:transform .15s ease}
+.link-arrow:hover::after{transform:translateX(3px)}
+
+/* --------- Sections --------- */
+.section{
+  padding: clamp(56px, 8vw, 96px) 0;
+  width:min(1100px, 92vw);
+  margin:0 auto;
+  border-top:1px solid var(--line);
+}
+.section-head{margin-bottom:28px}
+.section h2{font-size: clamp(28px, 4vw, 56px); line-height:1; letter-spacing:-.02em}
+.muted{color:var(--muted)}
+.fine{color:#9a9a9a; font-size:12px; margin-top:18px}
+
+/* --------- Cards --------- */
+.grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:18px;
+}
+@media (max-width: 960px){ .grid{grid-template-columns:1fr} }
+
+.card{
+  border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  background:#fff; transition:transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.card-media img{width:100%; display:block; aspect-ratio: 16/9; object-fit:cover}
+.card-body{padding:18px}
+.card-body h3{margin:0 0 6px 0; font-size:22px}
+.row{display:flex; justify-content:space-between; align-items:center; margin-top:12px}
+.pill{display:inline-flex; align-items:center; border:1px solid var(--line); padding:.4rem .7rem; border-radius:999px; font-weight:600; color:#333; background:#fafafa}
+
+/* --------- Design split --------- */
+.split{display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center}
+@media (max-width: 1000px){ .split{grid-template-columns:1fr; gap:18px} }
+.ticks{margin:12px 0 20px 0; padding-left:0; list-style:none}
+.ticks li{position:relative; padding-left:20px; margin:8px 0}
+.ticks li::before{content:"—"; position:absolute; left:0; color:#bbb}
+.soft{border-radius:var(--radius); border:1px solid var(--line)}
+
+/* --------- Experience strip --------- */
+.strip{
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  background:#fff;
+  overflow:hidden;
+}
+.strip-track{
+  display:flex; gap:48px; padding:14px 0; white-space:nowrap; animation:marquee 22s linear infinite;
+  font-weight:700; letter-spacing:.02em;
+}
+.strip-track span{opacity:.7}
+@keyframes marquee{
+  from{transform:translateX(0)} to{transform:translateX(-50%)}
+}
+
+/* --------- CTA --------- */
+.cta-card{
+  border:1px solid var(--line); border-radius:calc(var(--radius) + 4px);
+  padding: clamp(28px, 5vw, 44px);
+  background: linear-gradient(#fff, #fbfbfb);
+  box-shadow: 0 20px 60px rgba(0,0,0,.06);
+  text-align:center;
+}
+.cta-actions{display:flex; justify-content:center; gap:12px; margin-top:18px; flex-wrap:wrap}
+
+/* --------- Footer --------- */
+.foot{
+  display:flex; justify-content:space-between; align-items:center;
+  width:min(1100px, 92vw); margin:0 auto; padding:28px 0; border-top:1px solid var(--line);
+  color:#8a8a8a; font-size:14px;
+}
+
+/* --------- Animations --------- */
+.fade
