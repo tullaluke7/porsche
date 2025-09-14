@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Porsche — Minimal Concept</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Minimal, modern Porsche concept site with smooth animations." />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="nav">
+    <a href="#" class="wordmark" aria-label="Porsche Home">PORSCHE</a>
+    <nav>
+      <a href="#models">Models</a>
+      <a href="#design">Design</a>
+      <a href="#experience">Experience</a>
+      <a href="#cta" class="btn pill magnet" data-strength="18">Build Yours</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <h1 class="fade-up">Timeless<br><span>by design.</span></h1>
+      <p class="sub fade-up delay-1">
+        Precision engineering. Iconic silhouette. Pure driving emotion.
+      </p>
+      <div class="cta-row fade-up delay-2">
+        <a href="#models" class="btn ghost magnet" data-strength="14">Explore Models</a>
+        <a href="#cta" class="btn primary magnet" data-strength="20">Configure</a>
+      </div>
+    </div>
+    <div class="hero-media" aria-hidden="true">
+      <!-- Large visual: external, high-res, copyright-friendly placeholder -->
+      <img
+        src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1920&auto=format&fit=crop"
+        alt="Porsche silhouette"
+        class="parallax"
+      />
+    </div>
+  </section>
+
+  <!-- Models -->
+  <section class="section models" id="models">
+    <div class="section-head">
+      <h2 class="fade-up">Models</h2>
+      <p class="muted fade-up delay-1">Performance for every road.</p>
+    </div>
+
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card fade-up">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1600&auto=format&fit=crop" alt="Porsche 911" />
+        </div>
+        <div class="card-body">
+          <h3>911</h3>
+          <p class="muted">The icon. Rear-engine performance crafted for pure engagement.</p>
+          <div class="row">
+            <span class="pill">0–60 mph: 3.0s*</span>
+            <a href="#cta" class="link-arrow">Configure</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card fade-up delay-1">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1629392777303-6d7a8fdfac4b?q=80&w=1600&auto=format&fit=crop" alt="Porsche Taycan" />
+        </div>
+        <div class="card-body">
+          <h3>Taycan</h3>
+          <p class="muted">Electric, uncompromised. Instant torque meets long-distance poise.</p>
+          <div class="row">
+            <span class="pill">Range: up to 246 mi*</span>
+            <a href="#cta" class="link-arrow">Configure</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card fade-up delay-2">
+        <div class="card-media">
+          <img src="https://images.unsplash.com/photo-1592921870583-3b85c1b7b30b?q=80&w=1600&auto=format&fit=crop" alt="Porsche Cayenne" />
+        </div>
+        <div class="card-body">
+          <h3>Cayenne</h3>
+          <p class="muted">Versatility with sports-car DNA. Every day, everywhere.</p>
+          <div class="row">
+            <span class="pill">Up to 468 hp*</span>
+            <a href="#cta" class="link-arrow">Configure</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="fine">*Concept figures for demo UI.</p>
+  </section>
+
+  <!-- Design -->
+  <section class="section design" id="design">
+    <div class="split">
+      <div class="col fade-up">
+        <h2>Design language</h2>
+        <p class="muted">Minimal lines. Maximum intent. A visual identity honed by function.</p>
+        <ul class="ticks">
+          <li>Proportions first — stance, shoulders, roofline.</li>
+          <li>Purposeful details — air, light, and weight in balance.</li>
+          <li>Material precision — aluminum, leather, and carbon fiber.</li>
+        </ul>
+        <a href="#experience" class="btn ghost magnet" data-strength="14">See Experience</a>
+      </div>
+      <figure class="col fade-up delay-1">
+        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop" alt="Interior detail" class="soft" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Experience strip -->
+  <section class="strip" id="experience">
+    <div class="strip-track">
+      <span>Rear-engine heritage</span>
+      <span>Electric performance</span>
+      <span>Lightweight engineering</span>
+      <span>Precision chassis</span>
+      <span>PCCB braking</span>
+      <span>Active aerodynamics</span>
+      <span>Driver first</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta" id="cta">
+    <div class="cta-card fade-up">
+      <h2>Make it yours</h2>
+      <p class="muted">Choose model, paint, wheels, and interior. Instantly preview.</p>
+      <div class="cta-actions">
+        <a class="btn primary magnet" data-strength="22" href="#">Start Configuration</a>
+        <a class="btn ghost magnet" data-strength="14" href="#models">Browse Models</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <span>Concept site for portfolio/demo. © You.</span>
+    <a href="#" class="link-arrow">Back to top</a>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
