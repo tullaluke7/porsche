@@ -52,4 +52,4 @@ magnets.forEach(el=>{
 document.querySelector(".foot .link-arrow")?.addEventListener("click", (e)=>{
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
-})
+});
